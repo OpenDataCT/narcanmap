@@ -13,10 +13,10 @@
 		function onLocationFound(e) {
 			var radius = e.accuracy / 2;
 
-			L.marker(e.latlng).addTo(map)
-				.bindPopup("You are within " + radius + " meters from this point").openPopup();
+			L.circleMarker(e.latlng).addTo(map)
+				.bindPopup("You are here").openPopup();
 
-			L.circle(e.latlng, radius).addTo(map);
+			//L.circle(e.latlng, radius).addTo(map);
 		}
 
 		function onLocationError(e) {
@@ -26,10 +26,10 @@
 		map.on('locationfound', onLocationFound);
 		map.on('locationerror', onLocationError);
 
-		map.locate({setView: true, maxZoom: 16});
-	
+		map.locate({setView: true, maxZoom: 12});
+
 	//get narcan data via SODA
-	var dataUrl ='https://data.ct.gov/resource/wzna-yuqm.geojson?'
+	var dataUrl ='https://data.ct.gov/resource/wzna-yuqm.geojson?&$$app_token=XLuaA9ORBAtEbSAgAs4VIO8SK'
 	$.getJSON(dataUrl, function(data, textstatus) {
 		$.each(data, function(i, entry) {
 
