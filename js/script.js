@@ -41,8 +41,8 @@
 		
     L.geoJson(data, {
 		onEachFeature: function (feature, layer) {
-		layer.bindPopup ('<h4>' + feature.properties.pharmacy_name + '</h4>' + '<br>' + feature.properties.phone + '</br>' + '<br>' + feature.properties.location_1_address + '</br>' 
-		 + feature.properties.location_1_city + '</br>' + feature.properties.location_1_zip)}
+		layer.bindPopup ('<h1>' + feature.properties.pharmacy_name + '</h1>' + '<h2>' + '<br>' + feature.properties.phone + '</br>' + '<br>' + feature.properties.location_1_address + '</br>' 
+		+ feature.properties.location_1_city + '</br>'+ feature.properties.location_1_zip + '</h2>')}
 	}).addTo(map)
 		
 		});
