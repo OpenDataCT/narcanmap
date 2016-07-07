@@ -1,7 +1,5 @@
 
 
-
-
 		
     //initialize the leaflet map, set options and view
     var map = L.map('map');
@@ -12,15 +10,12 @@
 
 		}).addTo(map);
 
-	
-
-	function onLocationFound(e) {
+		function onLocationFound(e) {
 			var radius = e.accuracy / 2;
-			
+
 			L.circleMarker(e.latlng).addTo(map)
 				.bindPopup("You are here").openPopup();
-			
-			
+
 			//L.circle(e.latlng, radius).addTo(map);
 		}
 
@@ -33,19 +28,12 @@
 
 		map.locate({setView: true, maxZoom: 12});
 
-
-	var dataUrl ="https://data.ct.gov/resource/4vs4-3cb3.geojson?&$$app_token=XLuaA9ORBAtEbSAgAs4VIO8SK"
-
+	//get narcan data via SODA
+	var dataUrl ='https://data.ct.gov/resource/wzna-yuqm.geojson?&$$app_token=XLuaA9ORBAtEbSAgAs4VIO8SK'
 	$.getJSON(dataUrl, function(data, textstatus) {
 		$.each(data, function(i, entry) {
 		
-    L.geoJson(data, {
-		onEachFeature: function (feature, layer) {
-		layer.bindPopup ('<h4>' + feature.properties.pharmacy_name + '</h4>' + '<br>' + feature.properties.phone + '</br>' + '<br>' + feature.properties.location_1_address + '</br>' 
-		 + feature.properties.location_1_city + '</br>' + feature.properties.location_1_zip)}
-	}).addTo(map)
-		
+    L.geoJson(data).addTo(map)
 		});
 	});
-
 
