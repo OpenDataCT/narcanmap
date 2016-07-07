@@ -49,7 +49,10 @@ html,body {
 h4 {
 	margin-bottom: 2px;
 }
-
+h1 { font-size: 10 px;
+	font-weight: bold;
+	}
+h2 { font-size: 8 px}	
 a,a:visited {
 	color:#CBC2DD;
 }
