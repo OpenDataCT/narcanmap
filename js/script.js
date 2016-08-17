@@ -31,7 +31,7 @@
 		map.on('locationfound', onLocationFound);
 		map.on('locationerror', onLocationError);
 
-		map.locate({setView: true, maxZoom: 14});
+		map.locate({setView: true, maxZoom: 13});
 
 
 	var dataUrl ="https://data.ct.gov/resource/4vs4-3cb3.geojson?&$$app_token=XLuaA9ORBAtEbSAgAs4VIO8SK"
