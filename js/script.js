@@ -6,7 +6,7 @@
     //initialize the leaflet map, set options and view
     var map = L.map('map');
 
-		L.tileLayer('https://a.tiles.wmflabs.org/osm//{z}/{x}/{y}.png', {
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png ', {
 	maxZoom: 18,
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 
